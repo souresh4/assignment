@@ -1,0 +1,40 @@
+<mat-horizontal-stepper linear #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup" name="firstFormGroup" (ngSubmit)="firstFormSubmit('firstForm')">
+            <ng-template matStepLabel>Fill out your name</ng-template>
+            <mat-form-field>
+                <input matInput placeholder="Full Name" formControlName="full_name" required
+                    (blur)="inputUntouch(firstFormGroup,'full_name')">
+                <mat-error *ngIf="firstFormGroup.controls['full_name'].touched && !firstFormGroup.controls['full_name'].valid
+            && firstFormGroup.controls['full_name'].errors.required">
+                    Full Name field can not be blank</mat-error>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup" name="secondFormGroup" (ngSubmit)="firstFormSubmit('secondForm')">
+            <ng-template matStepLabel>Fill out your address</ng-template>
+            <mat-form-field>
+                <input matInput placeholder="Address" formControlName="address" required>
+                <mat-error *ngIf="secondFormGroup.controls['address'].touched && !secondFormGroup.controls['address'].valid
+          && secondFormGroup.controls['address'].errors.required">
+                    Address field can not be blank</mat-error>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        You are now done.
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>
