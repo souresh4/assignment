@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { environment } from '../../../environments/environment.souresh';
 @Component({
   selector: 'app-stepper',
   templateUrl: './stepper.component.html',
@@ -8,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class StepperComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  
+  public soureshEnvironment : any;
   constructor(private fb: FormBuilder) {
     this.firstFormGroup = this.fb.group({
       full_name: ['', Validators.required]
@@ -16,7 +17,8 @@ export class StepperComponent implements OnInit {
     this.secondFormGroup = this.fb.group({
       address: ['', Validators.required]
     });
-
+   this.soureshEnvironment = environment.environmentName;
+   console.log("testing====",this.soureshEnvironment);
 
   }
 

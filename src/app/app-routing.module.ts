@@ -4,7 +4,7 @@ import { StepperComponent } from './component/stepper/stepper.component';
 
 const routes: Routes = [
   {
-     path : 'steeper' , component : StepperComponent
+     path : '' , component : StepperComponent
   }
 ];
 
