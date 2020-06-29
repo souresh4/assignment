@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { environment } from '../../../environments/environment.souresh';
+import { MetaserviceService } from '../../service/metaservice.service';
 @Component({
   selector: 'app-stepper',
   templateUrl: './stepper.component.html',
@@ -10,7 +11,7 @@ export class StepperComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   public soureshEnvironment : any;
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,public metaService : MetaserviceService) {
     this.firstFormGroup = this.fb.group({
       full_name: ['', Validators.required]
     });
@@ -18,9 +19,16 @@ export class StepperComponent implements OnInit {
       address: ['', Validators.required]
     });
    this.soureshEnvironment = environment.environmentName;
-   console.log("testing====",this.soureshEnvironment);
+   //this object is for metaService
+   const data: object = {
+    title: 'Souresh Assignment',
+    og_url: 'http://dna-backend.influxiq.com/ ',
+    og_type: 'blog',
+    og_title: 'Angular Example 1'
+  };
+  this.metaService.setmeta(data);
 
-  }
+  } 
 
   ngOnInit() {
   }
