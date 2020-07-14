@@ -18,6 +18,7 @@ export class MainServiceService {
         }, 3000);
       });
     }
+    console.log("random number",this.randomnumber);
     return this.randomnumber;
 
   }

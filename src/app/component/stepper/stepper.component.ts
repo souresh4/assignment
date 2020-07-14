@@ -59,7 +59,6 @@ export class StepperComponent implements OnInit {
       resolve(this.service.getrandomnumberpromise());
     }
     ).then((rand: number) => {
-      console.log(`promise Value ${rand} `, rand);
       this.randomnumberone.push({
         randnumber: rand,
 

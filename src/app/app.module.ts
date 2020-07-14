@@ -6,12 +6,14 @@ import { StepperComponent } from './component/stepper/stepper.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './materialModule';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GridexampleComponent } from './component/gridexample/gridexample.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    StepperComponent
+    StepperComponent,
+    GridexampleComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
