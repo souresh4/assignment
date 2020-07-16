@@ -1,8 +1,56 @@
-<mat-grid-list cols="3" rowHeight="3:1"  [cols]="breakpoint" (window:resize)="onResize($event)" gutterSize="25px">
-    <mat-grid-tile>1</mat-grid-tile>
-    <mat-grid-tile>2</mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
+<mat-grid-list cols="3" rowHeight="3:1" [cols]="breakpoint" (window:resize)="onResize($event)" gutterSize="25px">
+    <mat-grid-tile>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime earum architecto, accusamus unde
+        rem, corrupti molestiae maiores autem laborum obcaecati laboriosam eius vitae commodi. Nobis suscipit saepe
+        maiores ad dolorum. Repudiandae molestias vel vitae dolores cupiditate dolorem non odio repellendus dolor quae
+        doloribus dolorum incidunt ab, unde saepe corrupti soluta libero explicabo quia, ducimus deserunt pariatur
+        alias. Esse repellat, repudiandae fuga eius ipsam quis maiores quae vel iste ad accusamus totam minus illum
+        nostrum libero tempora aspernatur veritatis nobis vitae quo et facilis officiis expedita? Magnam soluta culpa
+        fuga nesciunt consectetur tempora quisquam, nam officia error enim corporis non mollitia.</mat-grid-tile>
+
+    <mat-grid-tile>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet fugiat debitis labore maiores
+        expedita, nulla possimus illum placeat accusantium explicabo dolore facilis quia deleniti id similique dicta
+        ducimus assumenda unde doloribus enim molestiae ullam quaerat iste. Minus animi asperiores suscipit in ducimus
+        qui accusantium, quos tenetur repellendus, incidunt magni modi consequatur quaerat aut nam nihil deserunt soluta
+        perferendis, adipisci pariatur fugiat laborum fuga vel! Expedita delectus excepturi tenetur, dignissimos
+        deserunt nihil, at quas sequi odit soluta doloremque quod blanditiis mollitia facilis illo iste ad! Ducimus
+        doloribus vero, magnam exercitationem repellat suscipit veniam, architecto vitae numquam quaerat labore ex
+        mollitia enim deleniti consequuntur corporis rem voluptatum quam? Repellendus officia adipisci, nihil deserunt
+        vero saepe ab nisi unde tempora sequi minima? Ratione eum illo veniam laudantium incidunt, repudiandae aliquam
+        vero delectus sunt quod? Excepturi cupiditate natus nulla asperiores nam neque rem esse! Repellat magni deleniti
+        qui nostrum fuga earum, consectetur vel iusto aliquid perspiciatis assumenda unde corrupti laudantium obcaecati
+        doloremque a dicta nisi culpa eligendi explicabo similique nulla ut voluptatem. Sapiente expedita mollitia
+        delectus provident ab error a deleniti qui distinctio corporis nisi tempora officiis adipisci perferendis optio
+        impedit, ad magnam soluta, assumenda cupiditate aspernatur vero facilis earum! Dolorem, totam. Voluptatibus
+        dolores quia, iure natus pariatur voluptates esse eligendi, dolor repellendus aliquam incidunt? Quo eligendi rem
+        expedita adipisci quaerat explicabo iure, aut quasi, ut eveniet dolor consectetur aliquam quam magni atque
+        dolorum, omnis nemo et. Praesentium, modi assumenda rerum explicabo culpa autem perferendis deleniti itaque
+        nulla similique quam placeat exercitationem voluptatibus. Tempore, asperiores! Omnis dignissimos sed consectetur
+        error vero sequi vitae qui molestiae placeat deserunt nobis voluptate repellendus, beatae aliquid sapiente dolor
+        ut at laudantium nemo veniam nihil ab voluptatem? Voluptatem nostrum iste porro sunt quo debitis. Possimus
+        veritatis, eius qui quam ullam, sequi est, eos omnis odio culpa neque distinctio voluptas?</mat-grid-tile>
+
+    <mat-grid-tile>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur, dolor
+        voluptatem recusandae odio aspernatur vel exercitationem, tempora praesentium inventore? At quos, ullam unde
+        nesciunt incidunt vel a numquam dolorem? Laboriosam a ex minima. Ullam sint error placeat excepturi assumenda
+        eum amet corporis nisi, laboriosam asperiores in hic cum optio impedit doloremque fugit inventore est nam a
+        atque nulla illum perferendis consectetur facere. Ex error fugiat voluptas distinctio in perferendis corporis
+        sint repellat? Quae distinctio soluta inventore ipsam libero quas aut ea voluptatum, exercitationem, quasi
+        aliquam incidunt hic eveniet, nesciunt totam odit rerum omnis reiciendis doloremque fuga asperiores!
+    </mat-grid-tile>
+
     <mat-grid-tile>4</mat-grid-tile>
     <mat-grid-tile>5</mat-grid-tile>
     <mat-grid-tile>6</mat-grid-tile>
+
+</mat-grid-list>
+
+
+<p> {{ 520 | custom:500: 150 }} </p>
+
+<h1>DYNAMIC GRID</h1>
+<mat-grid-list [cols]="breakpoint" gutterSize="5px" rowHeight="3:1" (window:resize)="onResize($event)">
+    <mat-grid-tile *ngFor="let val of gridData" [colspan]="val.cols" rowspan="{{val.text | custom:val.text.length: 930}}" [style.background]="val.color" >
+        {{val.text }}  {{val.text | custom:val.text.length: 950}}
+        <!-- <p style="float: right; align-content: flex-end;">dd ii</p> -->
+    </mat-grid-tile>
 </mat-grid-list>

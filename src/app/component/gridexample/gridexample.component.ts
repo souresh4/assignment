@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface Tile {
+import { CustomPipe } from '../../pipe/custom.pipe';
+export interface Grid {
   color: string;
   cols: number;
   rows: number;
@@ -13,15 +13,23 @@ export interface Tile {
 })
 export class GridexampleComponent implements OnInit {
   breakpoint: number;
+  gridData: Grid[] = [
+    { text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!', cols: 1, rows: 2, color: 'lightblue' },
+
+    { text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum repellendus ut consequatur!', cols: 1, rows: 2, color: 'lightgreen' },
+    
+    { text: 'Three', cols: 1, rows: 2, color: 'lightpink' },
+    { text: 'Four', cols: 1, rows: 2, color: '#DDBDF1' },
+    { text: 'Five', cols: 1, rows: 2, color: '#DDBDF1' },
+    { text: 'SIX', cols: 1, rows: 2, color: 'red' }
+  ];
   constructor() { }
 
   ngOnInit() {
     this.breakpoint = ( window.innerWidth <= 800 && window.innerWidth >= 400) ? 2 : (window.innerWidth <= 400) ? 1 :3;
-    console.log(this.breakpoint, 'brkpoint', window.innerWidth);
   }
   onResize(event) {
     this.breakpoint = ( window.innerWidth <= 800 && window.innerWidth >= 400) ? 2 : (window.innerWidth <= 400) ? 1 :3;
-    console.log(this.breakpoint, 'brkpoint', window.innerWidth);
   }
 
 }

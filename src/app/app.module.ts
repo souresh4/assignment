@@ -7,13 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './materialModule';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GridexampleComponent } from './component/gridexample/gridexample.component';
+import { CustomPipe } from './pipe/custom.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     StepperComponent,
-    GridexampleComponent
+    GridexampleComponent,
+    CustomPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -23,7 +25,7 @@ import { GridexampleComponent } from './component/gridexample/gridexample.compon
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CustomPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
